@@ -7,16 +7,12 @@ Project Organization
 --------------------
 
     .
-    ├── AUTHORS.md
     ├── LICENSE
     ├── README.md
     ├── bin
     ├── config
     ├── data
-    │   ├── external
-    │   ├── interim
-    │   ├── processed
-    │   └── raw
+    │   ├── About_dataset.md
     ├── docs
     ├── notebooks
     |
