@@ -23,7 +23,6 @@ class ResBlock(nn.Module):
             conv3x3(channel_num, channel_num),
             nn.BatchNorm2d(channel_num),
             nn.ReLU(inplace=True),
-
             conv3x3(channel_num, channel_num),
             nn.BatchNorm2d(channel_num)
         )
@@ -31,11 +30,8 @@ class ResBlock(nn.Module):
         self.relu = nn.ReLU(inplace=True)
 
     def forward(self, x):
-        residual = x
-        out = self.block(x)
-        out += residual
-        out = self.relu(out)
-        return out
+        out = self.block(x) + x
+        return self.relu(out)
 
 
 def add_resblocks(channel_num, nr_blocks):
