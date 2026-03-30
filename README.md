@@ -19,11 +19,9 @@ Project Organization
     │   └── raw
     ├── docs
     ├── notebooks
-    ├── reports
-    │   └── figures
+    |
     └── src
         ├── data
-        ├── external
         ├── models
-        ├── tools
+        ├── utils
         └── visualization
