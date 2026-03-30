@@ -99,7 +99,8 @@ class Generator(nn.Module):
             nn.BatchNorm2d(64),
             nn.ReLU(inplace=True),
 
-            nn.Conv2d(64, 3, kernel_size=7, stride=1, padding=7 // 2)
+            nn.Conv2d(64, 3, kernel_size=7, stride=1, padding=7 // 2),
+            nn.Tanh()
         )
 
     def forward(self, x):
