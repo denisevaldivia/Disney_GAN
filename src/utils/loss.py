@@ -34,27 +34,6 @@ class AdversialLoss(nn.Module):
         # suma total de losses del discriminador
         return D_cartoon_loss + D_generated_fake_loss + D_edge_fake_loss
         
-# class AdversialLoss(nn.Module):
-#     """
-#     Loss para el discriminador de CartoonGAN con label smoothing y edge loss ponderado.
-#     """
-#     def __init__(self):
-#         super().__init__()
-#         self.base_loss = nn.BCEWithLogitsLoss()
-
-#     def forward(self, cartoon_pred, generated_pred, edge_pred, cartoon_labels, fake_labels):
-#         """
-#         Args:
-#             cartoon_pred: predicciones del discriminador para cartoons reales
-#             generated_pred: predicciones del discriminador para imágenes generadas
-#             edge_pred: predicciones del discriminador para cartoons suavizados
-#             cartoon_labels: tensor con etiquetas suavizadas para reales (ej. 0.9)
-#             fake_labels: tensor con etiquetas suavizadas para falsos (ej. 0.1)
-#         """
-#         D_cartoon_loss = self.base_loss(cartoon_pred, cartoon_labels)
-#         D_generated_fake_loss = self.base_loss(generated_pred, fake_labels)
-#         D_edge_fake_loss = self.base_loss(edge_pred, fake_labels)
-#         return D_cartoon_loss + D_generated_fake_loss + 0.1 * D_edge_fake_loss
 
 class ContentLoss(nn.Module):
     def __init__(self, omega=10):
